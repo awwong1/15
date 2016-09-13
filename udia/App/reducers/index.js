@@ -1,18 +1,8 @@
-import * as types from '../actions/actionTypes';
+import {combineReducers} from 'redux';
+import FireBaseTestReducer from './firebase_test_reducer';
 
-const initialState = {
-  navColor: '#fff',
-  navStyle: {backgroundColor: '#ff585b', color: '#fff', padding: 20},
-  userDeets: {
-    email: "test@udia.ca",
-  }
-};
+const rootReducer = combineReducers({
+  test: FireBaseTestReducer,
+});
 
-export function udia(state = initialState, action = {}) {
-  switch (action.type) {
-    case types.LOGIN:
-      return {...state,};
-    default:
-      return state;
-  }
-}
+export default rootReducer;

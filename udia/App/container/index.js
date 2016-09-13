@@ -14,11 +14,10 @@ const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 
 
-export default class Index extends Component {
+export default class extends Component {
   //noinspection JSMethodCanBeStatic
   render() {
     return (
-      // todo fix ide warning
       <View style={{flex: 1}}>
         <Provider store={store}>
           <Components/>

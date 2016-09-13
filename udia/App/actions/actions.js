@@ -1,10 +1,10 @@
-import * as types from './actionTypes';
+import FireBaseTools from '../utils/firebase';
+import {TEST} from './types';
 
-export function login(navProps, res) {
-  console.log(res);
+export function test(provider) {
+  const request = FireBaseTools.test(provider);
   return {
-    type: types.LOGIN,
-    nav: navProps,
-    data: res
+    type: TEST,
+    payload: request
   }
 }

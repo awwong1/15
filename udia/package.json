@@ -2,10 +2,17 @@
   "name": "udia",
   "version": "0.0.1",
   "private": true,
+  "description": "The 15th prototype.",
+  "license": "SEE LICENSE IN ../LICENSE",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/awwong1/15.git"
+  },
   "dependencies": {
+    "firebase": "^3.3.2",
     "react": "15.3.1",
     "react-native": "0.33.0",
     "react-redux": "^4.4.5",
