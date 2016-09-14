@@ -1,10 +1,7 @@
-import FireBaseTools from '../utils/firebase';
-import {TEST} from './types';
-
-export function test(provider) {
-  const request = FireBaseTools.test(provider);
-  return {
-    type: TEST,
-    payload: request
-  }
-}
+/**
+ * Copyright (C) Udia Software Incorporated - All Rights Reserved
+ * Unauthorized viewing or copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Alexander Wong <admin@alexander-wong.com>, September 2016
+ */
+'use strict';
