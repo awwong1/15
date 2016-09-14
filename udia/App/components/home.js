@@ -6,14 +6,36 @@
  */
 'use strict';
 
-import React, {Component} from 'react';
+import {Component} from 'react';
 import {
   StyleSheet,
-  Image,
   Text,
   TouchableOpacity,
   View
 } from 'react-native';
+
+const BACKGROUND_COLOR = '#f7f7f7';
+const BUTTON_BORDER = '#e7e7e7';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: BACKGROUND_COLOR
+  },
+  padding: {
+    flex: 9
+  },
+  buttons: {
+    width: 80,
+    height: 80,
+    borderWidth: 10,
+    borderColor: BUTTON_BORDER,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 40
+  },
+  buttonContainer: {flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}
+});
 
 export default class Home extends Component {
   constructor(props) {
@@ -21,18 +43,18 @@ export default class Home extends Component {
   }
 
   yup() {
-    console.log('Yes')
+    console.log('Yes');
   }
 
   nope() {
-    console.log('No')
+    console.log('No');
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.padding} />
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={styles.padding}/>
+        <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.buttons} onPress={() => this.nope()}>
             <Text>No</Text>
           </TouchableOpacity>
@@ -44,45 +66,6 @@ export default class Home extends Component {
           </TouchableOpacity>
         </View>
       </View>
-    )
+    );
   }
 }
-//onPress = {() => this.renderNope()}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f7f7f7',
-  },
-  padding: {
-    flex: 9
-  },
-  buttons: {
-    width: 80,
-    height: 80,
-    borderWidth: 10,
-    borderColor: '#e7e7e7',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 40
-  },
-  buttonSmall: {
-    width: 50,
-    height: 50,
-    borderWidth: 10,
-    borderColor: '#e7e7e7',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 25
-  },
-  card: {
-    flex: 1,
-    alignItems: 'center',
-    alignSelf: 'center',
-    borderWidth: 2,
-    borderColor: '#e3e3e3',
-    width: 350,
-    height: 420,
-  }
-
-});
