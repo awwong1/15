@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import Svg, {Polygon, Path} from 'react-native-svg';
 
 import {RICH_BLACK, GAINSBORO, OLD_LAVENDER} from '../styles/colors';
@@ -23,10 +23,6 @@ const styles = StyleSheet.create({
   },
   padding: {
     flex: 9
-  },
-  titleText: {
-    color: GAINSBORO,
-    fontSize: 30
   }
 });
 
@@ -55,7 +51,7 @@ class Loading extends Component {
       // TODO: Move to HOME state
     }).catch(error => {
       console.error(error);
-    })
+    });
   }
 
   render() {
@@ -77,7 +73,7 @@ class Loading extends Component {
 }
 
 const mapStateToProps = state => {
-  return {}
+  return {};
 };
 
 const mapDispatchToProps = dispatch => {
@@ -85,7 +81,7 @@ const mapDispatchToProps = dispatch => {
     onUserLoaded: user => {
       dispatch(setFirebaseUser(user));
     }
-  }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Loading);
