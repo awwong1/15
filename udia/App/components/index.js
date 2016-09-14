@@ -6,10 +6,10 @@
  */
 'use strict';
 
-import {Component} from 'react';
+import React, {Component} from 'react';
 import {Navigator, StyleSheet, View} from 'react-native';
 
-import Home from './home';
+import Loading from './loading';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,16 +29,14 @@ export default class Index extends Component {
     switch (routeId) {
       case 'home':
         return (
-          <Home
+          <Loading
             {...this.props}
-            userData={route.userData}
             navigator={navigator}/>
         );
       default:
         return (
-          <Home
+          <Loading
             {...this.props}
-            userData={route.userData}
             navigator={navigator}/>
         );
     }
@@ -49,8 +47,7 @@ export default class Index extends Component {
       <View style={styles.container}>
         <Navigator
           style={styles.container}
-          ref={'NAV'}
-          initialRoute={{id: 'home', name: 'Home'}}
+          initialRoute={{id: 'home', name: 'Loading'}}
           renderScene={this.renderScene.bind(this)}/>
       </View>
     );

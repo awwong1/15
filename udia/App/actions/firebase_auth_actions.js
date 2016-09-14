@@ -5,3 +5,18 @@
  * Written by Alexander Wong <admin@alexander-wong.com>, September 2016
  */
 'use strict';
+import {SET_FIREBASE_USER, UNSET_FIREBASE_USER} from './types';
+
+export function setFirebaseUser(user) {
+  return {
+    type: SET_FIREBASE_USER,
+    payload: user
+  }
+}
+
+export function unsetFirebaseUser() {
+  return {
+    type: UNSET_FIREBASE_USER,
+    payload: null
+  }
+}

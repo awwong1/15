@@ -7,7 +7,10 @@
 'use strict';
 
 import {combineReducers} from 'redux';
+import FirebaseUserReducer from './firebase_user_reducer';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  currentUser: FirebaseUserReducer
+});
 
 export default rootReducer;
