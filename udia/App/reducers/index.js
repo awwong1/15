@@ -7,10 +7,7 @@
 'use strict';
 
 import {combineReducers} from 'redux';
-import FireBaseTestReducer from './firebase_test_reducer';
 
-const rootReducer = combineReducers({
-  test: FireBaseTestReducer,
-});
+const rootReducer = combineReducers({});
 
 export default rootReducer;

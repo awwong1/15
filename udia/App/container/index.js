@@ -6,8 +6,8 @@
  */
 'use strict';
 
-import React, {Component} from 'react';
-import {View} from 'react-native';
+import {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
@@ -19,12 +19,17 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
 
 export default class extends Component {
-  //noinspection JSMethodCanBeStatic
+  // noinspection JSMethodCanBeStatic
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
         <Provider store={store}>
           <Components/>
         </Provider>

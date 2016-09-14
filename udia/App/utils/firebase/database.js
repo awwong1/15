@@ -14,7 +14,7 @@ let FireBaseToolsDatabase = {
    * Disconnect from the server (all database operations will be completed offline).
    * https://firebase.google.com/docs/reference/js/firebase.database.Database#goOffline
    *
-   * @returns {*|any}
+   * @return {*|any} unused
    */
   goOffline: () => {
     return firebaseDatabase.goOffline();
@@ -24,7 +24,7 @@ let FireBaseToolsDatabase = {
    * (Re)connect to the server and synchronize the offline database state with the server state.
    * https://firebase.google.com/docs/reference/js/firebase.database.Database#goOnline
    *
-   * @returns {*|any}
+   * @return {*|any} unused
    */
   goOnline: () => {
     return firebaseDatabase.goOnline();
@@ -34,10 +34,10 @@ let FireBaseToolsDatabase = {
    * Returns a Reference to the root or the specified path.
    * https://firebase.google.com/docs/reference/js/firebase.database.Database#ref
    *
-   * @param path {string}
-   * @returns {*}
+   * @param {string} [path] - Optional path to get reference for
+   * @return {!firebase.database.Reference} Firebase reference.
    */
-  ref: (path) => {
+  ref: path => {
     return firebaseDatabase.ref(path);
   },
 
@@ -46,10 +46,10 @@ let FireBaseToolsDatabase = {
    * An exception is thrown if the url is not in the same domain as the current database.
    * https://firebase.google.com/docs/reference/js/firebase.database.Database#refFromURL
    *
-   * @param url
-   * @returns {*}
+   * @param {string} url - Url to get reference for
+   * @return {!firebase.database.Reference} Firebase reference.
    */
-  refFromUrl: (url) => {
+  refFromUrl: url => {
     return firebaseDatabase.refFromUrl(url);
   }
 };

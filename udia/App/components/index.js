@@ -6,50 +6,53 @@
  */
 'use strict';
 
-import React, {Component} from 'react';
-import {
-
-  StyleSheet,
-  Image,
-  Text,
-  TouchableOpacity,
-  Navigator,
-  View
-} from 'react-native';
+import {Component} from 'react';
+import {Navigator, StyleSheet, View} from 'react-native';
 
 import Home from './home';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
 
 export default class Index extends Component {
   constructor(props) {
-    super(props)
-
+    super(props);
   }
 
   renderScene(route, navigator) {
-    var {state, actions} = this.props;
+    // var {state, actions} = this.props;
     var routeId = route.id;
 
-    if (routeId === 'home.js') {
-      return (
-        <Home
-          {...this.props}
-          userData={route.userData}
-          navigator={navigator}/>
-      );
+    switch (routeId) {
+      case 'home':
+        return (
+          <Home
+            {...this.props}
+            userData={route.userData}
+            navigator={navigator}/>
+        );
+      default:
+        return (
+          <Home
+            {...this.props}
+            userData={route.userData}
+            navigator={navigator}/>
+        );
     }
   }
 
-
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
         <Navigator
-          style={{flex: 1}}
+          style={styles.container}
           ref={'NAV'}
-          initialRoute={{id: 'home.js', name: 'home.js'}}
+          initialRoute={{id: 'home', name: 'Home'}}
           renderScene={this.renderScene.bind(this)}/>
       </View>
-    )
+    );
   }
 }

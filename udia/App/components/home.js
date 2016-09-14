@@ -7,12 +7,7 @@
 'use strict';
 
 import {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const BACKGROUND_COLOR = '#f7f7f7';
 const BUTTON_BORDER = '#e7e7e7';

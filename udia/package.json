@@ -5,7 +5,9 @@
   "description": "The 15th prototype.",
   "license": "SEE LICENSE IN ../LICENSE",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "node node_modules/.bin/eslint App",
+    "test": "node node_modules/.bin/eslint App"
   },
   "repository": {
     "type": "git",
