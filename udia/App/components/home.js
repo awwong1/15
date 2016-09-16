@@ -7,13 +7,35 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
 
-import {GAINSBORO} from '../styles/colors';
+import {GAINSBORO, GUNMETAL} from '../styles/colors';
+import Logo from './logo';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: GUNMETAL,
+    alignItems: 'center'
+  },
   text: {
     color: GAINSBORO
+  },
+  padding: {
+    flex: 1
+  },
+  username: {
+    color: GAINSBORO,
+  },
+  label: {
+    color: GAINSBORO
+  },
+  password: {
+    color: GAINSBORO
+  },
+  input: {
+    flex: 1,
+    flexDirection: 'column'
   }
 });
 
@@ -24,8 +46,33 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View>
-        <Text style={styles.text}>Home</Text>
+      <View style={styles.container}>
+        <Text style={styles.padding}/>
+        <Logo/>
+        <View style={styles.input}>
+          <Text style={styles.label}>Username:</Text>
+          <TextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            autoFocus={false}
+            style={styles.username}
+            selectTextOnFocus={true}
+            placeholder="Enter your username"
+          />
+        </View>
+        <View style={styles.input}>
+          <Text style={styles.label}>Password:</Text>
+          <TextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            autoFocus={false}
+            style={styles.password}
+            secureTextEntry={true}
+            selectTextOnFocus={true}
+            placeholder="Enter your password"
+          />
+        </View>
+        <Text style={styles.padding}/>
       </View>
     );
   }

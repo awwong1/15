@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Navigator, StyleSheet, View} from 'react-native';
 
 import Loading from './loading';
+import Home from './home';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,10 +28,16 @@ export default class Index extends Component {
     var routeId = route.id;
 
     switch (routeId) {
-      case 'home':
+      case 'loading':
         return (
           <Loading
             {...this.props}
+            navigator={navigator}/>
+        );
+      case 'home':
+        return (
+          <Home
+            {... this.props}
             navigator={navigator}/>
         );
       default:
@@ -47,7 +54,7 @@ export default class Index extends Component {
       <View style={styles.container}>
         <Navigator
           style={styles.container}
-          initialRoute={{id: 'home', name: 'Loading'}}
+          initialRoute={{id: 'loading', name: 'Loading'}}
           renderScene={this.renderScene.bind(this)}/>
       </View>
     );
