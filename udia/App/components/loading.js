@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     backgroundColor: RICH_BLACK,
     alignItems: 'center'
   },
-  padding: {
-    flex: 9
+  padding1: {
+    flex: 1
   }
 });
 
@@ -42,7 +42,7 @@ class Loading extends Component {
       });
     }).then(user => {
       console.log('user', user);
-      this.props.navigator.replace({id: 'home', name: 'Home'});
+      this.props.navigator.replace({id: 'login', name: 'Login'});
       console.log('done navigating');
     }).catch(error => {
       console.error(error);
@@ -52,11 +52,11 @@ class Loading extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.padding}/>
+        <Text style={styles.padding1}/>
         <Logo/>
-        <Text style={styles.padding}/>
+        <Text style={styles.padding1}/>
         <ActivityIndicator/>
-        <Text style={styles.padding}/>
+        <Text style={styles.padding1}/>
       </View>
     );
   }

@@ -163,7 +163,7 @@ let FireBaseToolsAuth = {
    * https://firebase.google.com/docs/reference/js/firebase.auth.Auth#signInWithEmailAndPassword
    *
    * @param {string} email - The user's email address
-   * @param {string} password = The users password
+   * @param {string} password - The users password
    * @return {!firebase.Promise.<!firebase.User>} non-null firebase.Promise containing non-null firebase.User
    */
   signInWithEmailAndPassword: (email, password) => {

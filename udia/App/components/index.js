@@ -10,7 +10,8 @@ import React, {Component} from 'react';
 import {Navigator, StyleSheet, View} from 'react-native';
 
 import Loading from './loading';
-import Home from './home';
+import Login from './login';
+import Register from './register';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,10 +35,16 @@ export default class Index extends Component {
             {...this.props}
             navigator={navigator}/>
         );
-      case 'home':
+      case 'login':
         return (
-          <Home
-            {... this.props}
+          <Login
+            {...this.props}
+            navigator={navigator}/>
+        );
+      case 'register':
+        return (
+          <Register
+            {...this.props}
             navigator={navigator}/>
         );
       default:
